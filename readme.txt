@@ -1,0 +1,16 @@
+Kindly follow these steps before execution
+
+Mail Server- Gmail Mail Server is used
+ set email & password at PATH: \HIRegApp\src\main\java\com\nagarro\HIRegApp\config\MainConfig.java <FILE>
+
+start mysql workbench at backend
+
+Then start the java server by running \HIRegApp\src\main\java\com\nagarro\HIRegApp\HiRegAppApplication.java <FILE> as Java Application.
+
+--> now new tables wil be created
+
+then, execute the given .sql file to insert data for inspection.
+
+then run the  \HIRegAppFront app as Angular Application.
+
+Thankyou.

@@ -1,0 +1,39 @@
+<div class="container">
+    <br>
+    <div class="card" style="margin-left: 20%;margin-right: 20%;">
+        <h4 class="card-header">{{ title }}</h4>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="aadhaar"> <b>Aadhaar card </b> </label>
+                    <br>
+                    <input type="file" (change)="onAadharFileChange($event)" formControlName="aadhaar" class="form-control-range" [ngClass]="{ 'is-invalid': submitted && f.aadhaar.errors }" />
+                    <div *ngIf="submitted && f.aadhaar.errors" class="invalid-feedback">
+                        <div *ngIf="f.aadhaar.errors.required">it is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="taxCopy"><b>Tax ids copy</b></label>
+                    <br>
+                    <input type="file" (change)="onTaxFileChange($event)" formControlName="taxCopy" class="form-control-range" [ngClass]="{ 'is-invalid': submitted && f.taxCopy.errors }" />
+                    <div *ngIf="submitted && f.taxCopy.errors" class="invalid-feedback">
+                        <div *ngIf="f.taxCopy.errors.required">it is required</div>
+                    </div>
+                </div>
+                <br>
+    
+                <div class="form-group" style="text-align-last: center;">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Next
+                    </button>
+                    &nbsp;
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+</div>
+

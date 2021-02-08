@@ -1,0 +1,41 @@
+<div class="container" style="margin-bottom: 5%;">
+<br>
+    <div class="card" style="margin-left: 20%;margin-right: 20%;">
+        <h4 class="card-header">{{ title }}</h4>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <label><b>Select From Available Dates</b></label>
+                <div *ngIf="available_dates != []" style="text-align-last: end;">
+                    <br>
+                    <select (change)="onDateSelect($event)">
+                        <option>--Select--</option>
+                        <option *ngFor="let date of available_dates"  value="{{date}}">
+                            {{ date }}
+                        </option>
+                    </select>
+                </div>
+                <hr>
+                <br>
+                <label><b>Select From Available Time</b></label>
+                <div *ngIf="available_times != []" style="text-align-last: end;">
+                    <br>
+                    <select (change)="onTimeSelect($event)">
+                        <option>--Select--</option>
+                        <option *ngFor="let time of available_times" value="{{time}}">{{time}}</option>
+                    </select>
+                </div>
+                <hr>
+                
+                <div class="form-group" style="text-align-last: center;">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Submit
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+

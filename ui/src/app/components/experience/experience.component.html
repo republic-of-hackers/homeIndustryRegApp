@@ -1,0 +1,51 @@
+<div class="container" style="margin-bottom: 5%;">
+    <br>
+<div class="card" style="margin-left: 20%;margin-right: 20%;">
+    <h2 class="card-header">{{ title }}</h2>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="experience"><b>Experience</b></label>
+                <textarea name="experience" cols="55" rows="5" formControlName="experience" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.experience.errors }"></textarea>
+                <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
+                    <div *ngIf="f.experience.errors.required">it is required</div>
+                </div>
+            </div>
+
+            <br>
+            <p>{{ warn }}</p>
+
+            <label><b>Uploads</b></label>
+            <br>
+            <div class="form-group">
+                <div ngf-select ngf-multiple="true" ng-model="files" ngf-validate-fn="validateFile($file)">
+                <input #fileInput type="file" formControlName="work" class="form-control-range" (change)="onSelectFile($event)"/>
+                </div>
+            </div>
+
+            <div class="card" style="margin-left: 30%;margin-right: 30%;"> 
+                <h6 class="card-header">Added Files</h6>
+                <div class="form-group">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success" *ngFor="let file of myFiles">
+                            {{ file.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group" style="text-align-last: center;">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Next
+                </button>
+                &nbsp;
+                    <button type="reset" onclick="window.location.reload()" class="btn btn-secondary">Reset</button>
+            </div>
+            
+        </form>
+
+    </div>
+</div>
+</div>

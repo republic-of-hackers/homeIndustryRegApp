@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" routerLinkActive="active" routerLink="/home">HIREGAPP</a>
+    
+    <!-- Links -->
+    <ul class="navbar-nav">
+      
+    </ul>
+  
+    <ul class="navbar-nav ml-auto" [hidden]="isauth()">
+      
+        <li class="nav-item">
+          <a class="nav-link" style="color: antiquewhite;" routerLinkActive="active" routerLink="/login">
+            Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: antiquewhite;" routerLinkActive="active" routerLink="/register">Register</a>
+        </li>
+      
+    </ul>
+  
+    <ul class="navbar-nav ml-auto" [hidden]="!isauth()">
+      <li class="nav-item"> 
+        <a class="nav-link" routerLinkActive="active" routerLink="/personal">{{ current_user }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+</nav>
+

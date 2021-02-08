@@ -1,0 +1,182 @@
+<br>
+<div class="card" style="margin-bottom: 5%;margin-left: 5%;margin-right: 5%;">
+    <h4 class="card-header">{{title}}</h4>
+    <div class="card-body" >
+        <h3>Formal Name</h3> <br>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" required formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                          <div *ngIf="f.firstName.errors.required">It is required</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="middleName">Middle Name</label>
+                        <input type="text" formControlName="middleName" class="form-control"/>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" required formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                          <div *ngIf="f.lastName.errors.required">It is required</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <hr>
+            <h3>Address</h3> <br>
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="homeNo">Home No.</label>
+                        <input type="text" required formControlName="homeNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.homeNo.errors }" />
+                        <div *ngIf="submitted && f.homeNo.errors" class="invalid-feedback">
+                          <div *ngIf="f.homeNo.errors.required">It is required</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="streetName">Street Name</label>
+                        <input type="text" formControlName="street" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="area">Area</label>
+                        <input type="text" required formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }" />
+                        <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
+                          <div *ngIf="f.area.errors.required">It is required</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="landmark">Landmark</label>
+                        <input type="text" required formControlName="landmark" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.landmark.errors }" />
+                        <div *ngIf="submitted && f.landmark.errors" class="invalid-feedback">
+                          <div *ngIf="f.landmark.errors.required">It is required</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" required formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }"/>
+                        <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                          <div *ngIf="f.city.errors.required">It is required</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" required formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }"/>
+                        <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                          <div *ngIf="f.state.errors.required">It is required</div>
+                        </div>  
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" required formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
+                        <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                          <div *ngIf="f.country.errors.required">It is required</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <hr>
+
+            <h3>Contact Details</h3><br>
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="number" required formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                          <div *ngIf="f.phone.errors.required">It is required</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="altphone">Alternate Number</label>
+                        <input type="number" formControlName="altPhone" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="email">Primary Email</label>
+                        <input type="email" required formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">It is required</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="altEmail">Alternate Email</label>
+                        <input type="email" required formControlName="altEmail" class="form-control"   />
+                        
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="fax">Fax</label>
+                        <input type="number" required formControlName="fax" class="form-control"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            
+            <div class="form-group">
+                <h3>Industry Type</h3>
+                <br>
+                <label for="userType" class="radio-inline">
+                <input type="radio" name="userType" formControlName="userType" value='organisation' [ngClass]="{ 'is-invalid': submitted && f.userType.errors }">
+                &nbsp;&nbsp; Organisation</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="userType" class="radio-inline">
+                <input type="radio" name="userType" formControlName="userType" value="individual" [ngClass]="{ 'is-invalid': submitted && f.userType.errors }">&nbsp;&nbsp; Individual</label>
+                <div *ngIf="submitted && f.userType.errors" class="invalid-feedback">
+                  <div *ngIf="f.userType.errors.required">It is required</div>
+                </div>
+            </div>
+
+            <hr>
+            <div class="form-group">
+                <label for="tax"><b>Tax ID</b></label>
+                <input type="text" style="width: 30%;" required formControlName="tax" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.tax.errors }"  />
+                <div *ngIf="submitted && f.tax.errors" class="invalid-feedback">
+                  <div *ngIf="f.tax.errors.required">It is required</div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group" style="text-align-last: center;">
+                <button type="submit" style="width: 7%;" [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Save
+                </button>
+                &nbsp;
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
